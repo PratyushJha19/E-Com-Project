@@ -13,6 +13,7 @@ class Category(models.Model):
         return self.name
     
 class Product(models.Model):
+    category = models.ForeignKey(Category, related_name='product', on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=250)
     brand = models.CharField(max_length=250, default='Un-Branded')
     description = models.TextField(blank=True)
