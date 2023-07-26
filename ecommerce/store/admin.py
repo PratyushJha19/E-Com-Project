@@ -1,3 +1,7 @@
+# Admin Details
+# admin - username
+# admin123 - password
+
 from django.contrib import admin
 
 # Register your models here.
