@@ -18,7 +18,7 @@ class Product(models.Model):
     brand = models.CharField(max_length=250, default='Un-Branded')
     description = models.TextField(blank=True)
     slug = models.SlugField(max_length=255)
-    price = models.DecimalField(max_digits=10, decimal_places=3)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='images/')
 
     class Meta:
