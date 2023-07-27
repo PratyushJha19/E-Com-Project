@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'store.views.categories',  # Updated, Can be used in every file in the project
+                'cart.context_processors.cart',  # With this the session handling functionality is available throughout our Project
             ],
         },
     },
