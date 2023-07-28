@@ -5,7 +5,8 @@ from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 
 def cart_summary(request):
-    return render(request, 'cart/cart_summary.html')
+    cart = Cart(request)
+    return render(request, 'cart/cart_summary.html', {'cart':cart})
 
 def cart_add(request):
     cart = Cart(request)
