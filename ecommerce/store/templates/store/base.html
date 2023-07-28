@@ -16,7 +16,7 @@
 
         <!-- CSS -->
         
-        <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+        <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -131,10 +131,22 @@
 
                     <a type="button" role="button" href="{% url 'cart_summary' %}" class="btn btn-outline-secondary"> 
                     
-
-
                         <i class="fa fa-shopping-cart" aria-hidden="true"> </i>
 
+                        &nbsp;
+                        <div id="cart-qty" class="d-incline-flex">
+                            {% with qty_amount=cart|length %}
+
+                                {% if qty_amount > 0 %}
+                                    {{qty_amount}}
+    
+                                    {% else %}
+                                        0
+    
+                                {% endif %}
+
+                            {% endwith %}
+                        </div>
 
                     </a>
 
