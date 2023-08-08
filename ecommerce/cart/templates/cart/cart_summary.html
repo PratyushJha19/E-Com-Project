@@ -112,7 +112,7 @@
 
       <div class="col-12 text-end">
  
-        <div class="h6 fw-bold"> Sub total: ₹ <div id="total" class="d-inline-flex"> {{cart.get_total}} </div></div>
+        <div class="h6 fw-bold"> Total: ₹ <div id="cart-total" class="d-inline-flex"> {{cart.get_total}} </div></div>
  
       </div>
 
@@ -137,7 +137,9 @@
 
           success: function(json){
               // console.log(json)
-              //document.getElementById("cart-qty").textContent = json.qty
+              location.reload();
+              document.getElementById("cart-qty").textContent = json.qty
+              document.getElementById("cart-total").textContent = json.total
           },
 
           error: function(xhr, errmsg, err){

@@ -24,6 +24,14 @@ class Cart():
         
         self.session.modified = True
 
+
+    def delete(self, product):
+        product_id = str(product)
+        if product_id in self.cart:
+            del self.cart[product_id]
+        self.session.modified = True
+
+
     def __len__(self):
         return sum(item['qty'] for item in self.cart.values())
     
@@ -42,4 +50,5 @@ class Cart():
 
     def get_total(self):
         return sum(Decimal(item['price']) * item['qty'] for item in self.cart.values())
+
 
